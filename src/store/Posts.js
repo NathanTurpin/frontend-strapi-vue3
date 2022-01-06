@@ -18,7 +18,7 @@ export default {
     fetchPosts({ state }) {
       return new Promise((resolve, fail) => {
         axios
-          .get(state.URL + "posts", {})
+          .get(state.URL + "posts?populate=*", {})
           .then((response) => {
             console.log(response);
             resolve(response.data);

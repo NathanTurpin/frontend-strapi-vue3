@@ -1,0 +1,20 @@
+query posts {
+  posts {
+    data {
+      attributes {
+        title
+        description
+        content
+        image {
+          img1 {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
