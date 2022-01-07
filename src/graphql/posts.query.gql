@@ -1,14 +1,27 @@
+# Write your query or mutation here
 query posts {
   posts {
     data {
       attributes {
-        title
+        titreInfo
+        titreArticle
         description
-        content
-        image {
+        section {
+          section
+        }
+        img {
           img1 {
             data {
               attributes {
+                name
+                url
+              }
+            }
+          }
+          img2 {
+            data {
+              attributes {
+                name
                 url
               }
             }
