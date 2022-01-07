@@ -1,18 +1,41 @@
 <template>
-  <div>
-    <Posts />
+  <div v-for="(post, index) in posts" :key="index">
+    <img :src="url + post.attributes.img[0].img1.data.attributes.url" />
+
+    <p>{{ post.attributes.titreInfo }}</p>
+    <p>{{ post.attributes.description }}</p>
+    <small> lire la suite </small>
+    <router-link :to="{ path: '/post/' + post.id }">lire la suite</router-link>
+    <hr />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import Posts from "@/components/Posts.vue";
+// import { ref } from "vue";
+import { useQuery, useResult } from "@vue/apollo-composable";
+import postsQuery from "../graphql/posts.query.gql";
+// import axios from "axios";
 
 export default {
-  name: "Home",
-  components: {
-    Posts,
+  setup() {
+    const { result } = useQuery(postsQuery);
+    const posts = useResult(result, null, (data) => data.posts.data);
+    console.log(posts);
+    return { posts };
+  },
+  data() {
+    return {
+      url: process.env.VUE_APP_URL,
+    };
+  },
+  mounted() {
+    // axios
+    //   .get(process.env.VUE_APP_URL_API + "posts")
+    //   .then((res) => console.log(res));
   },
 };
 </script>
 
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+</style>

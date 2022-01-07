@@ -2,7 +2,10 @@
 query posts {
   posts {
     data {
+      id
+
       attributes {
+        createdAt
         titreInfo
         titreArticle
         description
