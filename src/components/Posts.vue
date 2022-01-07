@@ -1,8 +1,9 @@
 <template>
   <div v-for="post in posts" :key="post.Title">
+    <img :src="url + post.attributes.img[0].img1.data.attributes.url" />
+
     <p>{{ post.attributes.titreInfo }}</p>
     <p>{{ post.attributes.description }}</p>
-    <img :src="url + post.attributes.img[0].img1.data.attributes.url" />
     <hr />
     <p>{{ post.attributes.titreArticle }}</p>
     <p>{{ post.attributes.section }}</p>
