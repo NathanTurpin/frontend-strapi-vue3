@@ -536,7 +536,72 @@ export default {
     border-radius: 0px;
   }
 
+  .grid3{
+
+  }
+
+  .imgGrid2{
+    position: absolute;
+    width: 311px;
+    height: 186px;
+    left: 32px;
+    top: 1840px;
+
+    background: linear-gradient(0deg, rgba(40, 36, 35, 0.2), rgba(40, 36, 35, 0.2)), url(../../public/img/aboutImg1.png);
+    
+    border: 2px solid #282423;
+    border-radius: 0px;
+  }
+
   /* ../../public/img/aboutImg1.png */
+
+
+  .headlineSection{
+    position: absolute;
+    width: 375px;
+    height: 598px;
+    left: 0px;
+    top: 2315px;
+
+    background: #FFFFFF;
+  }
+
+  .subtitle{
+    position: absolute;
+    width: 121px;
+    height: 18px;
+    left: 127px;
+    top: 2390px;
+
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #282423;
+  }
+
+  .headlineSectionText{
+    position: absolute;
+    width: 311px;
+    height: 400px;
+    left: 32px;
+    top: 2438px;
+
+    font-family: Gallery Modern;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 38px;
+    line-height: 50px;
+
+    text-align: center;
+
+    color: #282423;
+  }
 
 }
 
