@@ -172,9 +172,7 @@ export default {
     border-radius: 0px;
   }
 
-  .titleSection{
-
-  }
+  .titleSection{}
 
   .title{
     position: absolute;
@@ -399,6 +397,148 @@ export default {
 
     color: #282423;
   }
+
+/* Media query */
+
+@media screen and (max-width: 375px) {
+  .header{
+    position: absolute;
+    width: 375px;
+    height: 933px;
+    left: 0px;
+    top: 0px;
+
+    background: #F5EFE8;
+  }
+
+  .headerTextLeft{
+    position: absolute;
+    width: 121px;
+    height: 36px;
+    left: 32px;
+    top: 97px;
+
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+
+    text-transform: uppercase;
+
+    color: #282423;
+  }
+
+  .headerTextRight{
+    position: absolute;
+    width: 96px;
+    height: 36px;
+    left: 247px;
+    top: 97px;
+
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+
+    text-align: right;
+    text-transform: uppercase;
+    color: #282423;
+  }
+
+  .headline h1{
+    position: absolute;
+    width: 311px;
+    height: 350px;
+    left: 32px;
+    top: 231px;
+
+    font-family: Gallery Modern;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 38px;
+    line-height: 50px;
+
+    color: #282423;
+  }
+
+  .importantColor{
+    color:#b47b48;
+  }
+
+  .aboutImgSection{
+    position: absolute;
+    width: 311px;
+    height: 186px;
+    left: 32px;
+    top: 840px;
+
+    background: linear-gradient(0deg, rgba(40, 36, 35, 0.2), rgba(40, 36, 35, 0.2)), url(../../public/img/aboutImg1.png);
+
+    border: 2px solid #282423;
+    border-radius: 0px;
+  }
+
+  .titleSection{}
+
+  .title{
+    position: absolute;
+    width: 198px;
+    height: 50px;
+    left: 32px;
+    top: 1126px;
+
+    font-family: Gallery Modern;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 38px;
+    line-height: 50px;
+
+    color: #282423;
+  }
+
+  .titleSectionText{
+    position: absolute;
+    width: 311px;
+    height: 100px;
+    left: 32px;
+    top: 1188px;
+
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 25px;
+
+    color: #282423;
+  }
+
+  .parent {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .imgGrid1{
+    position: absolute;
+    width: 311px;
+    height: 186px;
+    left: 32px;
+    top: 1388px;
+    margin-top: 100px;
+
+    background: linear-gradient(0deg, rgba(40, 36, 35, 0.2), rgba(40, 36, 35, 0.2)), url(../../public/img/aboutImg1.png);
+
+    border: 2px solid #282423;
+    border-radius: 0px;
+  }
+
+  /* ../../public/img/aboutImg1.png */
+
+}
 
 </style>
 
