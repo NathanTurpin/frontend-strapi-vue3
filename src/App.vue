@@ -9,7 +9,13 @@
   /> -->
   <router-view />
 </template>
-
+<style>
+@font-face {
+  font-family: "Gallery";
+  src: local("Gallery"),
+  url(./fonts/GalleryModern/gallerymodern-webfont.ttf) format("truetype");
+}
+</style>
 <script>
 import Nav from "@/components/Nav.vue";
 // import { ref } from "vue";
