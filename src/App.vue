@@ -15,6 +15,9 @@
   src: local("Gallery"),
   url(./fonts/GalleryModern/gallerymodern-webfont.ttf) format("truetype");
 }
+body {
+  background: #f5efe8;
+}
 </style>
 <script>
 import Nav from "@/components/Nav.vue";

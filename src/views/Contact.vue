@@ -60,7 +60,7 @@
 .contact {
   margin: 0 auto;
   display: flex;
-  gap: 100px;
+  gap: 200px;
   width: 100%;
 }
 
@@ -72,9 +72,16 @@ form {
 
 form input {
   border: none;
+  font-family: Mulish, sans-serif;
   border-bottom: 1px solid #ddc3ac;
-  color: rgba(180, 123, 72, 0.5);
-  padding: 5px 0 5px 0;
+  color: #b47b4880;
+  font-size: 18px;
+  padding: 5px 0 5px 5px;
+  background-color: #f5efe8;
+}
+
+form input::placeholder {
+  color: #b47b4880;
 }
 
 input:hover,
@@ -86,10 +93,11 @@ label {
   display: block;
   text-transform: uppercase;
   margin-top: 15%;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
+  font-weight: 400;
 }
 
-input+input {
+input + input {
   float: right;
 }
 
