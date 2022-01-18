@@ -124,11 +124,45 @@ span {
   font-weight: normal;
 }
 
-.personal-information .social-link, .personal-information .phone-link {
+.personal-information .social-link,
+.personal-information .phone-link {
   text-transform: uppercase;
   text-decoration: none;
   font-family: Mulish, sans-serif;
   font-size: 18px;
   color: #282423;
+}
+
+@media (min-width: 768px) {
+  .contact {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact {
+    flex-direction: column;
+  }
+
+  .information-column h1 {
+    font-size: 6vw;
+  }
+
+  .personal-information {
+    flex-direction: column;
+    font-size: 14px;
+  }
+
+  .personal-information h2 {
+    font-size: 14px;
+  }
+
+  .personal-information .social-link, .personal-information .phone-link {
+    font-size: 14px;
+  }
+
+  .form-column {
+    order: 2;
+  }
 }
 </style>
