@@ -72,7 +72,22 @@
     </div>
 
     <div class="projectDescriptionSection">
-      
+      <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
+      <div class="horizontalScroll">
+        <img class="img1" src="" alt="" srcset="">
+        <img class="img2" src="" alt="" srcset="">
+        <img class="img3" src="" alt="" srcset="">
+        <img class="img4" src="" alt="" srcset="">
+      </div>
+      <div class="nextProject">
+        <h1>Projet suivant</h1>
+      </div>
+    </div>
+
+    <div class="lowerProjectImage">
+      <img class="img1" src="" alt="" srcset="">
+      <img class="img2" src="" alt="" srcset="">
+      <img class="img3" src="" alt="" srcset="">
     </div>
 
   </div>
