@@ -1,12 +1,13 @@
 <template >
-  <Nav />
+  <div>
+    <Nav />
 
-  <router-view />
+    <router-view />
+  </div>
 </template>
 
 <script>
 import Nav from "@/components/Nav.vue";
-
 export default {
   components: {
     Nav,
@@ -19,5 +20,8 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
 }
 </style>

@@ -28,13 +28,22 @@
 
         <!-- section  -->
         <div class="sectionContent">
-          <div v-for="(section, id) in post.attributes.section" :key="id" class="left">
+          <div
+            v-for="(section, id) in post.attributes.section"
+            :key="id"
+            class="left"
+          >
             <h3 v-if="section.titreSection" class="sectionSummary">
-              {{ section.titreSection }}
+              <a :href="'#id' + id">{{ section.titreSection }}</a>
             </h3>
           </div>
           <div class="right">
-            <section v-for="(section, id) in post.attributes.section" :key="id" class="postContent">
+            <section
+              :id="'id' + id"
+              v-for="(section, id) in post.attributes.section"
+              :key="id"
+              class="postContent"
+            >
               <!-- titre section  -->
               <h3 v-if="section.titreSection" class="title">
                 {{ section.titreSection }}
@@ -45,14 +54,16 @@
               </p>
               <div v-if="section.imgSection.data" class="image">
                 <!-- section img  -->
-                <img 
+                <img
                   :src="url + section.imgSection.data.attributes.url"
                   :alt="section.imgSection.data.attributes.alternativeText"
                 />
               </div>
+              <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+              <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+              <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
             </section>
           </div>
-
         </div>
       </div>
     </body>
