@@ -59,9 +59,6 @@
                   :alt="section.imgSection.data.attributes.alternativeText"
                 />
               </div>
-              <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-              <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-              <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
             </section>
           </div>
         </div>
