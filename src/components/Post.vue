@@ -1,34 +1,43 @@
 <template>
-  <div v-for="(post, id) in posts" :key="id">
-    <div v-if="post.id == this.routeParam">
-      <p>
-        {{ post.attributes.titreArticle }}
-      </p>
-      <p v-for="(section, id) in post.attributes.section" :key="id">
-        {{ section.section }}
-      </p>
-      <img :src="url + post.attributes.img[0].img1.data.attributes.url" />
-      <img :src="url + post.attributes.img[0].img2.data.attributes.url" />
-    </div>
-    <!-- <p>{{ posts[$route.params.id] }}</p> -->
-    <!-- 
-    <p>{{ posts[$route.params.id].attributes.titreArticle }}</p>
-    <p>{{ posts[$route.params.id].attributes.section }}</p> -->
-    <!-- <img
-      :src="
-        url + posts[$route.params.id].attributes.img.img2.data.attributes.url
-      "
-    /> -->
+  <div>
+    <body v-for="(post, id) in posts" :key="id">
+      <div v-if="post.id == this.routeParam">
+        <!-- titre article -->
+        <p>
+          {{ post.attributes.titreArticle }}
+        </p>
+        <!-- img header  -->
+        <img
+          v-if="post.attributes.headerImg"
+          :src="url + post.attributes.headerImg.img1.data.attributes.url"
+        />
 
-    <!-- <p>{{ posts[$route.params.id].attributes.img }}</p> -->
+        <!-- section  -->
+        <section v-for="(section, id) in post.attributes.section" :key="id">
+          <!-- titre section  -->
+          <div v-if="section.titreSection">
+            {{ section.titreSection }}
+          </div>
+          <div v-if="section.section">
+            <!-- section  -->
+            {{ section.section }}
+          </div>
+          <div v-if="section.imgSection.data">
+            <!-- section img  -->
+            <img
+              :src="url + section.imgSection.data.attributes.url"
+              :alt="section.imgSection.data.attributes.alternativeText"
+            />
+          </div>
+        </section>
+      </div>
+    </body>
   </div>
 </template>
 
 <script>
-// import { ref } from "vue";
 import { useQuery, useResult } from "@vue/apollo-composable";
 import postsQuery from "../graphql/posts.query.gql";
-// import axios from "axios";
 
 export default {
   setup() {
@@ -43,11 +52,7 @@ export default {
       routeParam: this.$route.params.id,
     };
   },
-  mounted() {
-    // axios
-    //   .get(process.env.VUE_APP_URL_API + "posts")
-    //   .then((res) => console.log(res));
-  },
+  mounted() {},
 };
 </script>
 

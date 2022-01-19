@@ -1,12 +1,19 @@
 <template>
-  <div v-for="(post, index) in posts" :key="index">
-    <img :src="url + post.attributes.img[0].img1.data.attributes.url" />
+  <div>
+    <body v-for="(post, index) in posts" :key="index">
+      <!-- {{ post.attributes.imgDescription.data.attributes.url }} -->
+      <p>{{ post.attributes.titreInfo }}</p>
 
-    <p>{{ post.attributes.titreInfo }}</p>
-    <p>{{ post.attributes.description }}</p>
-    <small> lire la suite </small>
-    <router-link :to="{ path: '/post/' + post.id }">lire la suite</router-link>
-    <hr />
+      <img :src="url + post.attributes.imgDescription.data.attributes.url" />
+
+      <p>{{ post.attributes.description }}</p>
+      <p>{{ post.attributes.createdAt.slice(0, 10) }}</p>
+
+      <router-link :to="{ path: '/post/' + post.id }"
+        >lire la suite</router-link
+      >
+      <hr />
+    </body>
   </div>
 </template>
 
@@ -38,4 +45,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+div {
+  display: flex;
+  flex-direction: column-reverse;
+}
 </style>
