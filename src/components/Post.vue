@@ -3,96 +3,59 @@
     <body v-for="(post, id) in posts" :key="id">
       <div v-if="post.id == this.routeParam">
         <!-- titre article -->
-        <p>
-          {{ post.attributes.titreArticle }}
-        </p>
-        <!-- img header  -->
-        <img
-          v-if="post.attributes.headerImg"
-          :src="url + post.attributes.headerImg.img1.data.attributes.url"
-        />
-
-        <!-- section  -->
-        <section v-for="(section, id) in post.attributes.section" :key="id">
-          <!-- titre section  -->
-          <div v-if="section.titreSection">
-            {{ section.titreSection }}
+        <div class="header">
+          <div class="title">
+            <h1>
+              {{ post.attributes.titreArticle }}
+            </h1>
           </div>
-          <div v-if="section.section">
-            <!-- section  -->
-            {{ section.section }}
-          </div>
-          <div v-if="section.imgSection.data">
-            <!-- section img  -->
-            <img
-              :src="url + section.imgSection.data.attributes.url"
-              :alt="section.imgSection.data.attributes.alternativeText"
-            />
-          </div>
-        </section>
-      </div>
-    </body>
-  <div v-for="(post, id) in posts" :key="id">
-    <div v-if="post.id == this.routeParam">
-      <!-- navbar -->
-      <div class="header">
-        <div class="title">
-          <h1>
-            {{ post.attributes.titreArticle }}
-          </h1>
-        </div>
-        <div class="details">
-          <div class="date">
-             <h3>{{ post.attributes.createdAt }}</h3>
-          </div>
-          <div class="categorie">
-            <!-- <h3>{{ post.attributes.categorieArticle }}</h3> --> <!-- api n'existe pas -->
-            <div class="temporaryStatic">
-              Catégorie
+          <div class="details">
+            <div class="categorie">
+              <h3>catagorie</h3>
+            </div>
+            <div class="date">
+              <h3>{{ post.attributes.createdAt.slice(0, 10) }}</h3>
             </div>
           </div>
         </div>
-      </div>
-      <div class="headerImg">
-        <img :src="url + post.attributes.img[0].img1.data.attributes.url" />
-      </div>
-
-      <div class="postContent">
-        <div class="sectionSummary">
-          <h3 v-for="(section, id) in post.attributes.section" :key="id">
-            {{ section.section }}
-          </h3>
+        <div class="headerImg">
+          <!-- img header  -->
+          <img
+            v-if="post.attributes.headerImg"
+            :src="url + post.attributes.headerImg.img1.data.attributes.url"
+          />
         </div>
-        <div class="content">
-          <div class="title">
-            <h3>
-              {{ post.attributes.titreArticle }}
+
+        <!-- section  -->
+        <div class="sectionContent">
+          <div v-for="(section, id) in post.attributes.section" :key="id" class="left">
+            <h3 v-if="section.titreSection" class="sectionSummary">
+              {{ section.titreSection }}
             </h3>
           </div>
-          <div class="description">
-            <p>{{ post.attributes.description }}</p>
+          <div class="right">
+            <section v-for="(section, id) in post.attributes.section" :key="id" class="postContent">
+              <!-- titre section  -->
+              <h3 v-if="section.titreSection" class="title">
+                {{ section.titreSection }}
+              </h3>
+              <p v-if="section.section" class="content">
+                <!-- section  -->
+                {{ section.section }}
+              </p>
+              <div v-if="section.imgSection.data" class="image">
+                <!-- section img  -->
+                <img 
+                  :src="url + section.imgSection.data.attributes.url"
+                  :alt="section.imgSection.data.attributes.alternativeText"
+                />
+              </div>
+            </section>
           </div>
-          <div class="image">
-            <img :src="url + post.attributes.img[0].img2.data.attributes.url" />
-          </div>
+
         </div>
       </div>
-
-      <!-- footer -->
-
-    </div>
-    <!-- <p>{{ posts[$route.params.id] }}</p> -->
-    <!-- 
-    <p>{{ posts[$route.params.id].attributes.titreArticle }}</p>
-    <p>{{ posts[$route.params.id].attributes.section }}</p> -->
-    <!-- <img
-      :src="
-        url + posts[$route.params.id].attributes.img.img2.data.attributes.url
-      "
-    /> -->
-
-    <!-- <p>{{ posts[$route.params.id].attributes.img }}</p> -->
-
+    </body>
   </div>
 </template>
 

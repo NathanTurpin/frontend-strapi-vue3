@@ -1,42 +1,32 @@
 <template>
   <div>
-    <body v-for="(post, index) in posts" :key="index">
-      <!-- {{ post.attributes.imgDescription.data.attributes.url }} -->
-      <p>{{ post.attributes.titreInfo }}</p>
+    <body v-for="(post, index) in posts" :key="index"  class="article">
+      <div class="header">
+        <div class="categorie">
+          <h3>catagorie</h3>
+        </div>
+        <div class="date">
+          <h3>{{ post.attributes.createdAt.slice(0, 10) }}</h3>
+        </div>
+      </div>
 
-      <img :src="url + post.attributes.imgDescription.data.attributes.url" />
+      <div class="image">
+        <img :src="url + post.attributes.imgDescription.data.attributes.url" />
+      </div>
 
-      <p>{{ post.attributes.description }}</p>
-      <p>{{ post.attributes.createdAt.slice(0, 10) }}</p>
+      <div class="title">
+        <h1>{{ post.attributes.titreInfo }}</h1>
+      </div>
+      <div class="details">
+        <h3>{{ post.attributes.description }}</h3>
+      </div>
 
-      <router-link :to="{ path: '/post/' + post.id }"
-        >lire la suite</router-link
-      >
+      <div class="seeMore">
+        <router-link :to="{ path: '/post/' + post.id }">lire la suite</router-link>
+      </div>
+      
       <hr />
     </body>
-  <div v-for="(post, index) in posts" :key="index">
-    <div class="article">
-      <div class="header">
-        <div class="title">
-          <h1>{{ post.attributes.titreInfo }}</h1>
-        </div>
-        <div class="details">
-          <h3>{{ post.attributes.titreInfo }}</h3>
-        </div>
-      </div>
-      <div class="image">
-        <img :src="url + post.attributes.img[0].img1.data.attributes.url" />
-      </div>
-      <div class="content">
-        <p>{{ post.attributes.titreInfo }}</p>
-        <p>{{ post.attributes.description }}</p>
-        <div class="seeMore">
-          <small> lire la suite </small>
-          <router-link :to="{ path: '/post/' + post.id }">lire la suite</router-link>
-        </div>
-      </div>
-      <hr />
-    </div>
   </div>
 </template>
 
