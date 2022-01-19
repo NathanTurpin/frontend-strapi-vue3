@@ -9,18 +9,11 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
   data() {
-    return {
-      logo: "",
-    };
+    return {};
   },
-  mounted() {
-    axios
-      .get(process.env.VUE_APP_URL_API + "menus")
-      .then((response) => (this.logo = response.data));
-  },
+  mounted() {},
 };
 </script>
 
