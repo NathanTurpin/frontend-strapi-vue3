@@ -32,6 +32,67 @@
         </section>
       </div>
     </body>
+  <div v-for="(post, id) in posts" :key="id">
+    <div v-if="post.id == this.routeParam">
+      <!-- navbar -->
+      <div class="header">
+        <div class="title">
+          <h1>
+            {{ post.attributes.titreArticle }}
+          </h1>
+        </div>
+        <div class="details">
+          <div class="date">
+             <h3>{{ post.attributes.createdAt }}</h3>
+          </div>
+          <div class="categorie">
+            <!-- <h3>{{ post.attributes.categorieArticle }}</h3> --> <!-- api n'existe pas -->
+            <div class="temporaryStatic">
+              Catégorie
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="headerImg">
+        <img :src="url + post.attributes.img[0].img1.data.attributes.url" />
+      </div>
+
+      <div class="postContent">
+        <div class="sectionSummary">
+          <h3 v-for="(section, id) in post.attributes.section" :key="id">
+            {{ section.section }}
+          </h3>
+        </div>
+        <div class="content">
+          <div class="title">
+            <h3>
+              {{ post.attributes.titreArticle }}
+            </h3>
+          </div>
+          <div class="description">
+            <p>{{ post.attributes.description }}</p>
+          </div>
+          <div class="image">
+            <img :src="url + post.attributes.img[0].img2.data.attributes.url" />
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+
+    </div>
+    <!-- <p>{{ posts[$route.params.id] }}</p> -->
+    <!-- 
+    <p>{{ posts[$route.params.id].attributes.titreArticle }}</p>
+    <p>{{ posts[$route.params.id].attributes.section }}</p> -->
+    <!-- <img
+      :src="
+        url + posts[$route.params.id].attributes.img.img2.data.attributes.url
+      "
+    /> -->
+
+    <!-- <p>{{ posts[$route.params.id].attributes.img }}</p> -->
+
   </div>
 </template>
 

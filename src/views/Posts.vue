@@ -14,6 +14,29 @@
       >
       <hr />
     </body>
+  <div v-for="(post, index) in posts" :key="index">
+    <div class="article">
+      <div class="header">
+        <div class="title">
+          <h1>{{ post.attributes.titreInfo }}</h1>
+        </div>
+        <div class="details">
+          <h3>{{ post.attributes.titreInfo }}</h3>
+        </div>
+      </div>
+      <div class="image">
+        <img :src="url + post.attributes.img[0].img1.data.attributes.url" />
+      </div>
+      <div class="content">
+        <p>{{ post.attributes.titreInfo }}</p>
+        <p>{{ post.attributes.description }}</p>
+        <div class="seeMore">
+          <small> lire la suite </small>
+          <router-link :to="{ path: '/post/' + post.id }">lire la suite</router-link>
+        </div>
+      </div>
+      <hr />
+    </div>
   </div>
 </template>
 
