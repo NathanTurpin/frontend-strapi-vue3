@@ -1,4 +1,4 @@
-<template >
+<template>
   <div>
     <Nav />
 
@@ -6,37 +6,15 @@
   </div>
 </template>
 <style>
-@font-face {
-  font-family: "Gallery";
-  src: local("Gallery"),
-  url(./fonts/GalleryModern.woff2) format("woff2");
-}
-@font-face {
-  font-family: "Mulish";
-  src: local("Mulish"),
-  url(./fonts/Mulish-Regular.woff2) format("woff2");
-}
-body {
-  background: #f5efe8;
-}
+@import '../styles/normalize.css';
+@import '../styles/style.css';
 </style>
 <script>
 import Nav from "@/components/Nav.vue";
+
 export default {
   components: {
-    Nav,
-  },
+    Nav
+  }
 };
 </script>
-
-<style >
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-</style>

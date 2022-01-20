@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "Gallery";
+  src: local("Gallery"),
+  url(../src/fonts/GalleryModern.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Mulish";
+  src: local("Mulish"),
+  url(../src/fonts/Mulish-Regular.woff2) format("woff2");
+}
+
+$black: #282423;
+$saumon100: #B47B48;
+$saumon45: #DDC3AC;
+$saumon30: #E9D8C9;
+$saumon20: #F5EFE8;
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: unset;
+  outline-color: $saumon100;
+}
+
+body {
+  font-family: Mulish, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: $black;
+}
+
+h1 {
+  font-family: Gallery, serif;
+  font-size: 3.5rem;
+  font-weight: normal;
+  line-height: 1.15;
+}
+
+h1, h2,
+p {
+  margin: unset;
+}
+
+a {
+  text-decoration: unset;
+  color: unset;
+}
+
+form input {
+  border: unset;
+  background: unset;
+  padding: unset;
+
+  &:focus {
+    outline: unset;
+  }
+}
+
+@import 'pages/contact.scss';
