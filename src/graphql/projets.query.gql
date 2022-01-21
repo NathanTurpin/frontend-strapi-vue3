@@ -1,0 +1,40 @@
+query projet {
+  projets {
+    data {
+      id
+      attributes {
+        titreProjet
+        sectionProjet {
+          titreSection
+          imgSection {
+            data {
+              attributes {
+                alternativeText
+                url
+              }
+            }
+          }
+          textSection
+        }
+        imgProjet {
+          data {
+            attributes {
+              alternativeText
+              url
+            }
+          }
+        }
+        imgDescription {
+          data {
+            attributes {
+              alternativeText
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+# Write your query or mutation here
