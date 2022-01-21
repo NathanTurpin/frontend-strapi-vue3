@@ -1,69 +1,57 @@
 <template>
-  <div>
-    <body v-for="(post, id) in posts" :key="id">
-      <div v-if="post.id == this.routeParam">
-        <!-- titre article -->
-        <div class="header">
-          <div class="title">
-            <h1>
+  <div class="post">
+    <div class="container">
+      <div v-for="(post, id) in posts" :key="id">
+        <div v-if="post.id == this.routeParam">
+          <div class="title-header">
+            <!-- titre article -->
+            <h1 class="title">
               {{ post.attributes.titreArticle }}
             </h1>
-          </div>
-          <div class="details">
-            <div class="categorie">
-              <h3>catagorie</h3>
-            </div>
-            <div class="date">
-              <h3>{{ post.attributes.createdAt.slice(0, 10) }}</h3>
+            <div class="header">
+              <h3 class="category">Catégorie</h3>
+              <h3 class="date">{{ post.attributes.createdAt.slice(0, 10) }}</h3>
             </div>
           </div>
-        </div>
-        <div class="headerImg">
+
           <!-- img header  -->
           <img
             v-if="post.attributes.headerImg"
             :src="url + post.attributes.headerImg.img1.data.attributes.url"
+            class="header-img"
           />
-        </div>
 
-        <!-- section  -->
-        <div class="sectionContent">
-          <div
-            v-for="(section, id) in post.attributes.section"
-            :key="id"
-            class="left"
-          >
-            <h3 v-if="section.titreSection" class="sectionSummary">
-              <a :href="'#id' + id">{{ section.titreSection }}</a>
-            </h3>
+          <!-- section  -->
+          <div class="section-links">
+            <a v-for="(section, id) in post.attributes.section"
+               :key="id" :href="'#id' + id" class="section-link">{{ section.titreSection }}</a>
           </div>
-          <div class="right">
+          <div class="section">
             <section
               :id="'id' + id"
               v-for="(section, id) in post.attributes.section"
               :key="id"
-              class="postContent"
             >
               <!-- titre section  -->
-              <h3 v-if="section.titreSection" class="title">
+              <h2 v-if="section.titreSection" class="section-title">
                 {{ section.titreSection }}
-              </h3>
-              <p v-if="section.section" class="content">
+              </h2>
+              <p v-if="section.section" class="section-content">
                 <!-- section  -->
                 {{ section.section }}
               </p>
-              <div v-if="section.imgSection.data" class="image">
-                <!-- section img  -->
-                <img
-                  :src="url + section.imgSection.data.attributes.url"
-                  :alt="section.imgSection.data.attributes.alternativeText"
-                />
-              </div>
+              <!-- section img  -->
+              <img
+                v-if="section.imgSection.data"
+                :src="url + section.imgSection.data.attributes.url"
+                :alt="section.imgSection.data.attributes.alternativeText"
+                class="section-img"
+              />
             </section>
           </div>
         </div>
       </div>
-    </body>
+    </div>
   </div>
 </template>
 
@@ -81,10 +69,11 @@ export default {
   data() {
     return {
       url: process.env.VUE_APP_URL,
-      routeParam: this.$route.params.id,
+      routeParam: this.$route.params.id
     };
   },
-  mounted() {},
+  mounted() {
+  }
 };
 </script>
 
