@@ -26,7 +26,7 @@
           </label>
           <input type="checkbox" name="toggle" id="toggle">
           <nav>
-            <router-link to="/">home</router-link>
+            <!--<router-link to="/">home</router-link>-->
             <router-link to="/contact">Contact</router-link>
             <router-link to="/about">About</router-link>
             <router-link to="/posts">Posts</router-link>
