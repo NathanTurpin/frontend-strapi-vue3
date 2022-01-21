@@ -1,0 +1,149 @@
+.posts {
+  background: $saumon20;
+  padding-bottom: 52px;
+
+  .container {
+    border-right: 1px solid $saumon30;
+    border-left: 1px solid $saumon30;
+    margin-inline: 12px;
+  }
+
+  .post {
+    padding: 24px 20px;
+    border-bottom: 1px solid $saumon30;
+    min-height: fit-content;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      text-transform: uppercase;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 12rem;
+      border: 2px solid $black;
+      margin-block: 24px;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 2.375rem;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .details {
+      font-size: 0.875rem;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .read-more {
+      font-size: 1rem;
+      line-height: 1.25;
+      text-align: center;
+
+      svg {
+        transform: translateX(-0.5rem);
+        transition: 0.2s;
+      }
+
+      &:hover svg {
+        transform: translateX(-0.2rem);
+      }
+
+      span {
+        display: inline-block;
+        transform: translateY(-1px);
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .container {
+      margin-inline: 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:
+            "a a a"
+            "b c d";
+
+      .post {
+        padding: 68px;
+
+        &:first-of-type {
+          grid-area: a;
+          position: relative;
+          padding: 68px;
+          display: grid;
+          grid-template-columns: 2fr 1fr 1fr;
+          grid-template-areas:
+                  "img cat ..."
+                  "img tit tit"
+                  "img det det"
+                  "img dte mor";
+
+          img {
+            grid-area: img;
+            margin: 0;
+          }
+
+          .category {
+            grid-area: cat;
+            position: absolute;
+            top: 0;
+            left: 100px;
+          }
+
+          h1 {
+            grid-area: tit;
+            margin: 32px 0 0 100px;
+          }
+
+          .details {
+            grid-area: det;
+            margin: 26px 0 0 100px
+          }
+
+          .date {
+            grid-area: dte;
+            position: absolute;
+            bottom: 0;
+            left: 100px;
+          }
+
+          .read-more {
+            grid-area: mor;
+            position: absolute;
+            margin: unset;
+            bottom: 0;
+            right: 0;
+          }
+        }
+
+        &:not(:first-of-type, :nth-of-type(3n+4)) {
+          border-right: 1px solid $saumon30;
+        }
+
+        img {
+          height: 18rem;
+        }
+
+        .details {
+          height: 76px;
+          margin-bottom: 26px;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .read-more {
+          margin-bottom: 34px;
+        }
+      }
+    }
+  }
+}

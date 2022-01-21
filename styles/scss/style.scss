@@ -27,11 +27,20 @@ html {
   outline-color: $saumon100;
 }
 
-body {
+body,
+h3 {
   font-family: Mulish, sans-serif;
   font-size: 0.75rem;
-  line-height: 1.5;
+  font-weight: normal;
   color: $black;
+}
+
+body {
+  line-height: 1.5;
+}
+
+h3 {
+  line-height: 1.25;
 }
 
 h1 {
@@ -61,4 +70,5 @@ form input {
   }
 }
 
-@import 'pages/contact.scss';
+@import "pages/contact";
+@import "pages/posts";
