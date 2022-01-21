@@ -112,6 +112,7 @@
         .contact-info {
           display: flex;
           justify-content: space-between;
+          margin-bottom: unset;
 
           > :last-child {
             text-align: right;
