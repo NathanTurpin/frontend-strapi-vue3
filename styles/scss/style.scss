@@ -19,6 +19,8 @@ $saumon20: #F5EFE8;
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+
+  background: $saumon20;
 }
 
 *, *:before, *:after {
@@ -69,6 +71,8 @@ form input {
     outline: unset;
   }
 }
+
+@import "components/nav";
 
 @import "pages/contact";
 @import "pages/posts";
