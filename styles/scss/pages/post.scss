@@ -23,7 +23,7 @@
   .header-img {
     width: 100vw;
     margin-block: 52px;
-    transform: translateX(-33px);
+    margin-left: -33px;
     height: 12rem;
     object-fit: cover;
     border: 2px solid $black;
@@ -84,7 +84,7 @@
     }
 
     .header-img {
-      transform: translateX(-101px);
+      margin-left: -101px;
       height: 18rem;
     }
 
