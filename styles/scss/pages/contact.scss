@@ -1,0 +1,124 @@
+.contact {
+  background: $saumon20;
+
+  .container {
+    border-right: 1px solid $saumon30;
+    border-left: 1px solid $saumon30;
+    margin-inline: 12px;
+    padding-inline: 20px;
+    padding-top: 32px;
+    padding-bottom: 75px;
+  }
+
+  h1 span {
+    color: $saumon100;
+  }
+
+  form {
+    margin-block: 39px;
+
+    label {
+      display: block;
+      width: fit-content;
+      margin-block: 13px;
+      text-transform: uppercase;
+
+      &[for="submit"] {
+        margin: 52px auto;
+      }
+    }
+
+    input:not([type="submit"]) {
+      width: 100%;
+      padding-bottom: 12px;
+      border-bottom: 1px solid $saumon45;
+      color: $saumon100;
+      font-size: 0.875rem;
+
+      &::placeholder {
+        color: $saumon45;
+      }
+
+      &:focus {
+        border-color: $saumon100;
+      }
+    }
+
+    input[type="submit"] {
+      opacity: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+  }
+
+  .contact-info {
+    margin-bottom: 32px;
+
+    h2 {
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      font-weight: normal;
+      font-size: 0.75rem;
+    }
+
+    p,
+    a {
+      margin-bottom: 32px;
+      font-size: 0.875rem;
+    }
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+  }
+
+  @media screen and (min-width: 768px) {
+    .container {
+      padding: 68px;
+      margin-inline: 32px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-gap: 10vw;
+      grid-template-areas:
+              "a b"
+              "c b";
+
+      .title {
+        grid-area: a;
+
+        h1 {
+          font-size: min(8rem, 7vw);
+        }
+      }
+
+      .form {
+        grid-area: b;
+        margin-top: auto;
+
+        form {
+          margin-block: unset;
+
+          label[for="submit"] {
+            margin: 52px 0 0 auto;
+          }
+        }
+      }
+
+      .info {
+        grid-area: c;
+
+        .contact-info {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: unset;
+
+          > :last-child {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}

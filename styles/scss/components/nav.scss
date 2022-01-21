@@ -1,0 +1,79 @@
+.nav {
+  background: $saumon20;
+
+  .container {
+    border-right: 1px solid $saumon30;
+    border-left: 1px solid $saumon30;
+    margin-inline: 12px;
+    padding: 20px;
+    border-bottom: 1px solid $saumon30;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      text-transform: uppercase;
+    }
+
+    label[for="toggle"] {
+      cursor: pointer;
+
+      svg {
+        margin-top: 4px;
+        float: right;
+      }
+
+      + input {
+        display: none;
+
+        &:not(:checked) + nav {
+          display: none;
+        }
+      }
+    }
+
+    nav {
+      position: absolute;
+      z-index: 1;
+      top: 60px;
+      bottom: 0;
+      left: 13px;
+      width: calc(100vw - 26px);
+      background: $saumon20;
+      padding-inline: 20px;
+
+      > * {
+        display: block;
+        margin-block: 4px;
+        font-family: Gallery, serif;
+        -webkit-text-stroke: 1px $black;
+        color: transparent;
+        font-size: 3.5rem;
+
+        &:hover,
+        &.router-link-active {
+          color: $black;
+          -webkit-text-stroke: unset;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .container {
+      margin-inline: 32px;
+      padding: 32px;
+    }
+    .menu {
+
+      nav {
+        top: 84px;
+        left: 33px;
+        width: calc(100vw - 66px);
+        padding: 32px;
+      }
+    }
+  }
+}
